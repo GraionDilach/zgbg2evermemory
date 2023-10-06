@@ -1,0 +1,21 @@
+BACKUP ~zgbg2evermemory/backup~ // location to store files for uninstall purposes
+AUTHOR ~Graion Dilach~
+VERSION ~1~
+
+LANGUAGE ~English~ ~english~ ~zgbg2evermemory/english/setup.tra~
+
+BEGIN @1
+LABEL ZG-BG2-EVERMEMORY
+
+COPY ~%MOD_FOLDER%/ZG1EVERM.BAM~ ~override~
+
+COPY ~%MOD_FOLDER%/ZG1EVERM.ITM~ ~override~
+	SAY NAME1 @102
+	SAY NAME2 @100
+	SAY DESC @101
+	SAY UNIDENTIFIED_DESC @103
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	COPY_EXISTING ~ribald.sto~ ~override~
+	ADD_STORE_ITEM ~ZG1EVERM~ AFTER ~clck12~ #0 #0 #0 ~IDENTIFIED~ #1
+END
