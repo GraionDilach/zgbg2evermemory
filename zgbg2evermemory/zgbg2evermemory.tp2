@@ -1,6 +1,6 @@
-BACKUP ~zgbg2evermemory/backup~ // location to store files for uninstall purposes
+BACKUP ~weidu_external/zgbg2evermemory/backup~ // location to store files for uninstall purposes
 AUTHOR ~Graion Dilach~
-VERSION ~1~
+VERSION ~2~
 
 LANGUAGE ~English~ ~english~ ~zgbg2evermemory/english/setup.tra~
 
@@ -19,3 +19,22 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 	COPY_EXISTING ~ribald.sto~ ~override~
 	ADD_STORE_ITEM ~ZG1EVERM~ AFTER ~clck12~ #0 #0 #0 ~IDENTIFIED~ #1
 END
+
+BEGIN @2
+LABEL ZG-BG2-EVERMEMORY-ALTICON
+REQUIRE_PREDICATE GAME_IS ~eet~ @10
+
+COPY ~%MOD_FOLDER%/ZG1EVERM.BAM~ ~override~
+
+COPY_EXISTING ~ring08_.itm~ ~override~
+	WRITE_ASCII 0x3A ~ZG1EVERM~ #8
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~bdring08.itm~ ~override~
+	WRITE_ASCII 0x3A ~ZG1EVERM~ #8
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~psmade12.itm~ ~override~
+	WRITE_ASCII 0x3A ~ZG1EVERM~ #8
+BUT_ONLY IF_EXISTS
+
